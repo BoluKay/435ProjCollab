@@ -15,6 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ribeye&family=Roboto:wght@400;700&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
    <style>
 
         
@@ -55,14 +57,14 @@
             <nav>
                 <ul>
                     
-                    <li><a href="#sign-in/sign-up">SIGN UP / SIGN IN</a></li>
-                    <li><a href="#resource-center">RESOURCE CENTER</a></li>
+                    <li id="signup-signin"><a href="#sign-in/sign-up">SIGN UP / SIGN IN</a></li>
+                    <li id="resource-center"><a href="#resource-center">RESOURCE CENTER</a></li>
                     
                 </ul>
             </nav>
         </div>
         <div class="right-bar">
-            <button class="chat-btn">Questions? Chat with us!</button>
+            <button class="chat-btn" id="chat-button">Questions? Chat with us!</button>
             <i class="fa-solid fa-robot robicon"></i>
         </div>
         
@@ -70,18 +72,18 @@
     <main>
         <section class="welcome-section">
             <div class="welcome-overlay">
-                <h1>WELCOME!</h1>
-                <p>Find Mental Health and Special Education Support in Your Preferred Language</p>
+                <h1 id="welcome-text">WELCOME!</h1>
+                <p id="description-text">Find Mental Health and Special Education Support in Your Preferred Language</p>
                 
-                <div> <p class="select">
+                <div> <p class="select" id="select-language-text">
                     SELECT LANGUAGE
                 </p>
                  </div>
 
                 <div class="language-buttons">
                     
-                    <button>English</button>
-                    <button>Arabic</button>
+                    <button id="english-button">English</button>
+                    <button id="arabic-button">Arabic</button>
                 </div>
             </div>
             <div class="welcome-image">
@@ -89,5 +91,7 @@
             </div>
         </section>
     </main>
+    <script src="script.js"></script>
+
 </body>
 </html>
