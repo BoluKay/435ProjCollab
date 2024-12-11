@@ -42,7 +42,7 @@ body {
     position: relative; /* For layering and precise placement */
     height: 60px; /* Height of the bars */
     background-color: #0088FF;  /* Ensure the white background for bars */
-    align-items: center
+    align-items: center;
     padding: 10px 20px;
    
 }
@@ -100,7 +100,7 @@ body {
     justify-content: flex-end;
     
     flex-shrink: 0; /* Keeps its size fixed */
-    width: 350px; /* Fixed width for the right bar */
+    width: 300px; /* Fixed width for the right bar */
     height: 100%;
     margin-right: 0px;
     clip-path: polygon(20px 0, 100% 0, 100% 100%, 20px 100%, 0 50%);
@@ -121,8 +121,7 @@ body {
     display: flex;  /* Align the heart icon and title horizontally */
     align-items: center; /* Vertically align the icon and title */
     gap: 10px; /* Space between the icon and title */
-    
-    margin-left: 10px;
+    margin-left: 1px;
 }
 
 
@@ -564,20 +563,20 @@ body {
 }
 
 /* Header */
-.logo-container {
+.login-topbar {
     text-align: center;
     padding: 20px;
     background-color: #005E89;
     color: white;
 }
 
-.logo-container .icon {
+.login-topbar .icon {
     font-size: 50px;
     color: rgb(212, 29, 29);
     display: block;
 }
 
-.logo-container .mental-health {
+.login-topbar.mental-health {
     font-size: 24px;
     font-weight: bold;
     margin: 10px 0;
