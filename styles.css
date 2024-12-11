@@ -42,29 +42,18 @@ body {
     position: relative; /* For layering and precise placement */
     height: 60px; /* Height of the bars */
     background-color: #0088FF;  /* Ensure the white background for bars */
-    align-items: center;
-    padding: 10px 20px;
-   
+    justify-content: space-between; /* Space out logo and navigation */
+    padding: 0;
+    width: 100%;
 }
 
 .navigation-bar{
-    background-color: #0088FF; /* Background color of left bar */
+    background-color: #0A2E72; /* Background color of left bar */
     display: flex;
     align-items: center;
-    padding: 0 20px; /* Add some padding inside */
-    
-}
-
-.navigation-bar ul {
-    display: flex;
-    gap: 20px; /* Add spacing between items */
-    list-style: none;
-    margin: 0; /* Pushes the list to the far right */
-    padding: 0;
-    margin-left: auto;
-}
-.navigation-bar li {
-    margin: 0;
+    justify-content: flex-end; 
+    padding: 0; /* Add some padding inside */
+    margin-right: 10px;
 }
 
 .navigation-bar a {
@@ -73,19 +62,20 @@ body {
     font-weight: bold;
     font-size: 1rem;
     padding: 5px 10px;
-    border-radius: 10px; /* Optional for rounded corners */
+    border-radius: 30px; /* Optional for rounded corners */
     transition: background-color 0.3s ease;
 }
 
 .navigation-bar a:hover {
     background-color: #0056b3; /* Slightly darker blue on hover */
 }
+
 /* Left bar styling */
 .left-bar {
     background-color: #0088FF; /* Background color of left bar */
     display: flex;
     align-items: center;
-    padding: 0 20px; /* Add some padding inside */
+    padding: 0 10px; /* Add some padding inside */
     flex: 1; /* Takes up the remaining space */
     clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%);    /* Creates the '>' shape */
 }
@@ -98,11 +88,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    
+    box-sizing: border-box;
     flex-shrink: 0; /* Keeps its size fixed */
     width: 300px; /* Fixed width for the right bar */
     height: 100%;
-    margin-right: 0px;
+    margin: 0px;
     clip-path: polygon(20px 0, 100% 0, 100% 100%, 20px 100%, 0 50%);
     overflow: hidden;
     position: relative; 
