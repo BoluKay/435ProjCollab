@@ -90,6 +90,7 @@ body {
     clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%);    /* Creates the '>' shape */
 }
 
+
 /* Right bar styling */
 .right-bar {
     background-color: #0A2E72; /* Background color of right bar */
@@ -552,3 +553,91 @@ footer.dashboard-footer {
     color: white;
 }
 
+/* login page */
+/* General Styles */
+body {
+    font-family: "Ubuntu Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5faff;
+    color: #333;
+}
+
+/* Header */
+.logo-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #005E89;
+    color: white;
+}
+
+.logo-container .icon {
+    font-size: 50px;
+    color: rgb(212, 29, 29);
+    display: block;
+}
+
+.logo-container .mental-health {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Auth Section */
+.auth-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.auth-section h2 {
+    text-align: center;
+    color: #005E89;
+    margin-bottom: 20px;
+}
+
+.auth-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-section label {
+    font-weight: bold;
+    color: #333;
+}
+
+.auth-section input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.auth-section button {
+    padding: 10px 15px;
+    background-color: #005E89;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-section button:hover {
+    background-color: #003f5c;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #005E89;
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+}
