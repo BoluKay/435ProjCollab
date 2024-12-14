@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 session_start();
 require 'db.php'; // Include database connection
 

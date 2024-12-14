@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 session_start();
 $isLoggedIn = isset($_SESSION['username']);
 ?>
@@ -90,3 +91,4 @@ $isLoggedIn = isset($_SESSION['username']);
     <script src="script.js"></script>
 </body>
 </html>
+

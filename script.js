@@ -8,6 +8,7 @@ const translations = {
         signupsignin: "SIGN UP / SIGN IN",
         englishButton: "English",
         arabicButton: "Arabic",
+        dashboardButton: "DASHBOARD"
     },
     ar: {
         welcome: "مرحباً!",
@@ -18,6 +19,7 @@ const translations = {
         signupsignin: "قم بالتسجيل / تسجيل الدخول",
         englishButton: "إنجليزي",
         arabicButton: "عربي",
+        dashboardButton: "لوحة القيادة"
     }
 };
 
@@ -30,6 +32,8 @@ function switchLanguage(lang) {
     document.getElementById("signup-signin").innerText = translations[lang].signupsignin;
     document.getElementById("english-button").innerText = translations[lang].englishButton;
     document.getElementById("arabic-button").innerText = translations[lang].arabicButton;
+    document.getElementById("dashboard").innerText = translations[lang].arabicButton;
+
 
 
     document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr"); // Set direction
