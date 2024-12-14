@@ -186,6 +186,27 @@ nav ul li a {
     font-weight: bold;
 }
 
+
+/* Reusable button class */
+.nav-button {
+    text-decoration: none;
+    background-color: #005E89; /* Default button background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for button size */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 1s; /* Smooth hover transition */
+}
+
+/* Hover effect for buttons */
+.nav-button:hover {
+    background-color: #005ae0; /* Change background color on hover */
+    transition: 1s; /* Smooth hover effect */
+}
+
+
+
 .chat-btn {
     background-color: #0088FF; /* Button background color */
     color: white; /* Text color */
