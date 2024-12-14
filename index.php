@@ -52,7 +52,7 @@ $isLoggedIn = isset($_SESSION['username']);
                          <ul>
                              <?php if ($isLoggedIn): ?>
                                   <!-- Dashboard button for logged-in users -->
-                                     <li id="dashboard"><a href="dashboard.php" class="nav-button">DASHBOARD</a></li>
+                                     <li id="dashboard"><a href="dashboard.php" class="nav-button">لوحة القيادة</a></li>
                              <?php else: ?>
                                    <!-- Sign Up / Sign In button for non-logged-in users -->
                                    <li id="signup-signin"><a href="login.php" class="nav-button">SIGN UP / SIGN IN</a></li>

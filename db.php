@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 $host = 'localhost';
 $db = 'user_management'; // Replace with your database name
 $user = 'root'; // Replace with your MySQL username (default is 'root')
