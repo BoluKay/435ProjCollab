@@ -1,60 +1,68 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 session_start();
-require 'db.php'; // Include the database connection
-?>
-
-
-<?php
-session_start();
-require 'db.php'; // Include the database connection
+require 'db.php'; // Include database connection
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $profile_picture = $_FILES['profile-picture'];
 
-    // Input Validation
+    // Validate Input
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email format.");
+        $signup_error = "Invalid email format.";
+    } elseif (strlen($password) < 10 || !preg_match('/[A-Z]/', $password) || !preg_match('/[0-9]/', $password)) {
+        $signup_error = "Password must be at least 10 characters, with one uppercase letter and one number.";
+    } else {
+        // Check for Duplicate Username or Email
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username OR email = :email");
+        $stmt->execute(['username' => $username, 'email' => $email]);
+        if ($stmt->rowCount() > 0) {
+            $signup_error = "Username or email already exists.";
+        } else {
+            // Hash Password and Insert
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+            $stmt->execute([
+                'username' => $username,
+                'email' => $email,
+                'password' => $hashed_password
+            ]);
+
+            // Redirect to Login
+            header("Location: login.php");
+            exit();
+        }
     }
-    if (strlen($password) < 10 || !preg_match('/[A-Z]/', $password) || !preg_match('/[0-9]/', $password)) {
-        die("Password must be at least 10 characters, with at least one uppercase letter and one number.");
-    }
-
-    // Check if username or email already exists
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username OR email = :email");
-    $stmt->execute(['username' => $username, 'email' => $email]);
-    if ($stmt->rowCount() > 0) {
-        die("Username or email already exists.");
-    }
-
-    // Save Profile Picture
-    $picture_name = null;
-    if ($profile_picture && $profile_picture['tmp_name']) {
-        $picture_name = uniqid() . '-' . $profile_picture['name'];
-        move_uploaded_file($profile_picture['tmp_name'], "uploads/$picture_name");
-    }
-
-    // Hash the Password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Insert the User into the Database
-    $stmt = $conn->prepare("INSERT INTO users (username, email, password, profile_picture) VALUES (:username, :email, :password, :profile_picture)");
-    $stmt->execute([
-        'username' => $username,
-        'email' => $email,
-        'password' => $hashed_password,
-        'profile_picture' => $picture_name
-    ]);
-
-    // Set Session Variables and Redirect
-    $_SESSION['username'] = $username;
-    $_SESSION['profile_picture'] = $picture_name;
-    header("Location: dashboard.php");
-    exit();
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Register</h2>
+        <?php if (isset($signup_error)): ?>
+            <p class="error"><?php echo $signup_error; ?></p>
+        <?php endif; ?>
+        <form action="register.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Register</button>
+        </form>
+        <p>Already registered? <a href="login.php">Login here.</a></p>
+    </div>
+</body>
+</html>
