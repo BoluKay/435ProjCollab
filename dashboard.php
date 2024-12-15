@@ -52,7 +52,7 @@ if (!isset($_SESSION['userid'])) { // Use userid to check authentication
             <h2>روابط سريعة</h2>
             <ul>
                 <li><a href="faqs.php">الأسئلة الشائعة</a></li>
-                <li><a href="resources.php">صفحة الموارد</a></li>
+                <li><a href="resource-center.php">صفحة الموارد</a></li>
                 <li><a href="chatbot.php">الدردشة مع AI Chatbot</a></li>
             </ul>
         </section>

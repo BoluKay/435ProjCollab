@@ -58,7 +58,7 @@ $isLoggedIn = isset($_SESSION['username']);
                                    <li id="signup-signin"><a href="login.php" class="nav-button">قم بالتسجيل / تسجيل الدخول</a></li>
                                  <?php endif; ?>
                             <!-- Resource Center button -->
-                               <li id="resource-center"><a href="resource-center.html" class="nav-button">مركز الموارد</a></li>
+                               <li id="resource-center"><a href="resource-center.php" class="nav-button">مركز الموارد</a></li>
                             </ul>
                     </nav>
 
