@@ -46,7 +46,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <div class="left-bar">
                     <div class="logo-container">
                         <i class="fa-solid fa-heart-pulse icon"></i>
-                        <p class="mental-health">PROJECT MENTAL HEALTH</p>
+                        <p class="mental-health">مشروع الصحة العقلية</p>
                     </div>
                     <nav>
                          <ul>
@@ -55,16 +55,16 @@ $isLoggedIn = isset($_SESSION['username']);
                                      <li id="dashboard"><a href="dashboard.php" class="nav-button">لوحة القيادة</a></li>
                              <?php else: ?>
                                    <!-- Sign Up / Sign In button for non-logged-in users -->
-                                   <li id="signup-signin"><a href="login.php" class="nav-button">SIGN UP / SIGN IN</a></li>
+                                   <li id="signup-signin"><a href="login.php" class="nav-button">قم بالتسجيل / تسجيل الدخول</a></li>
                                  <?php endif; ?>
                             <!-- Resource Center button -->
-                               <li id="resource-center"><a href="resource-center.html" class="nav-button">RESOURCE CENTER</a></li>
+                               <li id="resource-center"><a href="resource-center.html" class="nav-button">مركز الموارد</a></li>
                             </ul>
                     </nav>
 
                 </div>
                 <div class="right-bar">
-                    <button class="chat-btn" id="chat-button">Questions? Chat with us!</button>
+                    <button class="chat-btn" id="chat-button">أسئلة؟ الدردشة معنا!</button>
                     <i class="fa-solid fa-robot robicon"></i>
                 </div>
             </div>
@@ -73,21 +73,25 @@ $isLoggedIn = isset($_SESSION['username']);
     <main>
         <section class="welcome-section">
             <div class="welcome-overlay">
-                <h1 id="welcome-text">WELCOME!</h1>
-                <p id="description-text">Find Mental Health and Special Education Support in Your Preferred Language</p>
-                <div>
+                <h1 id="welcome-text">مرحباً!</h1>
+                <p id="description-text">ابحث عن دعم الصحة العقلية والتعليم الخاص باللغة العربية</p>
+                 <!-- <div>
                     <p class="select" id="select-language-text">SELECT LANGUAGE</p>
                 </div>
                 <div class="language-buttons">
                     <button id="english-button">English</button>
                     <button id="arabic-button">Arabic</button>
-                </div>
-            </div>
+                </div> -->
+            </div> 
             <div class="welcome-image">
                 <img src="aafsc-75.jpg" alt="Mother and child">
             </div>
         </section>
     </main>
+    
+    <footer class="dashboard-footer">
+        <p>&copy; 2024 مشروع الصحة النفسية. جميع الحقوق محفوظة.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

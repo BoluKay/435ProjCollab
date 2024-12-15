@@ -14,8 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verify Password
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['profile_picture'] = $user['profile_picture'];
+        $_SESSION['userid'] = $user['id']; // Assuming 'id' is the primary key in the users table
+        $_SESSION['username'] = $user['username']; // Use username for display only
+
         header("Location: dashboard.php");
         exit();
     } else {
@@ -31,24 +32,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
+    <div class="top-bar">
+        <div class="contact-info">
+            <div class="address">
+                <i class="fa fa-location-arrow"></i> 4901 Evergreen Rd, Dearborn MI 48126
+            </div>
+            <div class="email">
+                <i class="fa fa-envelope"></i> support@projectmentalhealth.com
+            </div>
+            <div class="phone">
+                <i class="fa fa-phone"></i> +1 (764) 456-9503
+            </div>
+        </div>
+    </div>
+
+    <div class="top-bar-container">
+            <div class="logo-container">
+                <i class="fa-solid fa-heart-pulse icon"></i>
+                <p class="mental-health">مشروع الصحة العقلية</p>
+            </div>
+                       
+            <nav class="navigation-bar">
+                <h2><a href="index.html"> بيت </a></h2> 
+            </nav>
+                       
+    </div>
+
     <div class="auth-container">
-        <h2>Login</h2>
+        <h2>تسجيل الدخول</h2>
         <?php if (isset($login_error)): ?>
             <p class="error"><?php echo $login_error; ?></p>
         <?php endif; ?>
         <form action="login.php" method="POST">
-            <label for="email">Email:</label>
+            <label for="email">بريد إلكتروني</label>
             <input type="email" id="email" name="email" required>
             
-            <label for="password">Password:</label>
+            <label for="password">كلمة المرور</label>
             <input type="password" id="password" name="password" required>
             
-            <button type="submit">Login</button>
+            <button type="submit">تسجيل الدخول</button>
         </form>
-        <p>Don't have an account? <a href="register.php">Register here.</a></p>
+        <p>ليس لديك حساب؟ <a href="register.php">سجل هنا.</a></p>
     </div>
+    
+    <footer class="auth-footer">
+           <p>&copy; 2024 مشروع الصحة النفسية. جميع الحقوق محفوظة.</p>
+    </footer>
 </body>
 </html>
-

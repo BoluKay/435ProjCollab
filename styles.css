@@ -1,3 +1,43 @@
+/* Ensure no horizontal scroll or gap */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 100%;
+}
+
+/* Apply consistent box-sizing to all elements */
+* {
+    box-sizing: border-box; /* Prevent padding/margin from affecting overall width */
+}
+
+/* Ensure header and top-bar containers don't overflow */
+.header, .top-bar-container, .welcome-section {
+    width: 100%; /* Set width to viewport width */
+    max-width: 100%; /* Prevent children from exceeding the parent's width */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Additional safeguard for elements causing overflow */
+.container, .content, .main-content {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Reset padding/margins that may contribute to overflow */
+ul, li, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent unnecessary gaps or scrollbars for images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Avoid inline image gaps */
+}
+
 body {
     font-family: "Ubuntu Sans", sans-serif;
     margin: 0;
@@ -267,23 +307,23 @@ nav ul li a {
     text-align: left; /* Align the text to the left */
 }
 
-.select {
-    font-family: "Urbanist", sans-serif; /* Font for the prompt */
-    font-size: 2rem; /* Adjust font size */
+/* .select {
+    font-family: "Urbanist", sans-serif; /* Font for the prompt 
+    font-size: 2rem; /* Adjust font size 
     font-weight: bold;
     color: #0056F9;
-    text-align: center; /* Keep the text centered */
-    margin-top: 20px; /* Adjust the vertical space above */
-    margin-bottom: 20px; /* Adjust the space below */
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Horizontally center the text */
-}
+    text-align: center; /* Keep the text centered 
+    margin-top: 20px; /* Adjust the vertical space above
+    margin-bottom: 20px; /* Adjust the space below 
+    display: flex; /* Use flexbox for centering 
+    justify-content: center; /* Horizontally center the text 
+} */
 
 
-.language-buttons {
-    display: flex; /* Flexbox for buttons */
-    justify-content: center; /* Align buttons to the left */
-    gap: 20px; /* Add spacing between buttons */
+/* .language-buttons {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
 }
 
 .language-buttons button {
@@ -300,7 +340,7 @@ nav ul li a {
 
 .language-buttons button:hover {
     background-color: #0056b3;
-}
+} */
 
 /* resource center page*/
 .resource-center-section {
@@ -470,7 +510,7 @@ header.dashboard-header {
     color: #003f5c;
 }
 
-/* Search Section */
+/* Search Section 
 .search-section {
     background: white;
     padding: 20px;
@@ -505,10 +545,10 @@ header.dashboard-header {
 
 .search-section button:hover {
     background-color: #003f5c;
-}
+}*/
 
 /* Recommendations Section */
-.recommendations-section {
+.saved-section {
     background: white;
     padding: 20px;
     margin-bottom: 20px;
@@ -516,23 +556,23 @@ header.dashboard-header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.recommendations-section ul {
+.saved-section ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.recommendations-section li {
+.saved-section li {
     margin: 5px 0;
 }
 
-.recommendations-section a {
+.saved-section a {
     text-decoration: none;
     color: #005E89;
     transition: color 0.3s;
 }
 
-.recommendations-section a:hover {
+.saved-section a:hover {
     color: #003f5c;
 }
 
@@ -673,6 +713,13 @@ body {
     color: #003f5c;
 }
 
+.auth-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #005E89; /* Footer background color */
+    color: white; /* Footer text color */
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}
 
 /* Error Messages */
 .error {
