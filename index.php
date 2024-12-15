@@ -89,7 +89,7 @@ $isLoggedIn = isset($_SESSION['username']);
         </section>
     </main>
     
-    <footer class="dashboard-footer">
+    <footer>
         <p>&copy; 2024 مشروع الصحة النفسية. جميع الحقوق محفوظة.</p>
     </footer>
     <script src="script.js"></script>

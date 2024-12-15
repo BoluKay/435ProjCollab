@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>ليس لديك حساب؟ <a href="register.php">سجل هنا.</a></p>
     </div>
     
-    <footer class="auth-footer">
+    <footer>
            <p>&copy; 2024 مشروع الصحة النفسية. جميع الحقوق محفوظة.</p>
     </footer>
 </body>

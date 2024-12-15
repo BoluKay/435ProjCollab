@@ -19,7 +19,7 @@ if (!isset($_SESSION['userid'])) { // Use userid to check authentication
             <h1>مرحباً, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1> <!-- Use username for display only -->
             <nav>
                 <ul>
-                    <li><a href="profile.php">إعدادات الحساب</a></li>
+                    <li><a href="index.php">بيت </a></li>
                     <li><a href="logout.php">تسجيل الخروج</a></li>
                 </ul>
             </nav>
@@ -52,14 +52,13 @@ if (!isset($_SESSION['userid'])) { // Use userid to check authentication
             <h2>روابط سريعة</h2>
             <ul>
                 <li><a href="faqs.php">الأسئلة الشائعة</a></li>
-                <li><a href="support.php">يدعم</a></li>
                 <li><a href="resources.php">صفحة الموارد</a></li>
                 <li><a href="chatbot.php">الدردشة مع AI Chatbot</a></li>
             </ul>
         </section>
     </main>
 
-    <footer class="dashboard-footer">
+    <footer>
         <p>&copy; 2024 مشروع الصحة النفسية. جميع الحقوق محفوظة.</p>
     </footer>
 </body>

@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>مسجلة بالفعل؟ <a href="login.php">تسجيل الدخول هنا</a></p>
     </div>
 
-    <footer class="dashboard-footer">
+    <footer>
       <p>&copy; 2024 مشروع الصحة النفسية. جميع الحقوق محفوظة.</p>
     </footer>
 </body>
